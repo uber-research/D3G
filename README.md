@@ -10,9 +10,7 @@
 </br>
 </br>
 
-Official PyTorch implementation of Deep Deterministic Dynamics Gradients. For research purpose only. Support and/or new releases may be limited.
-
-Our code is based heavily on the Twin Delayed DDPG [implementation](https://github.com/sfujim/TD3).
+Official PyTorch implementation of Deep Deterministic Dynamics Gradients. Code is based heavily on the Twin Delayed DDPG [implementation](https://github.com/sfujim/TD3). For research purpose only. Support and/or new releases may be limited.
 
 ## Running toy QSS problems
 The stochastic action results can be reproduced by running:
