@@ -5,6 +5,10 @@ import cv2
 
 import argparse
 import pickle 
+import os 
+
+if not os.path.exists("results"):
+    os.makedirs("results")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--stochasticity", type=float)       
@@ -31,8 +35,6 @@ UP = 0
 DOWN = 1
 LEFT = 2
 RIGHT = 3
-
-
 
 def I(state, next_state):
     row = state[0]
@@ -210,8 +212,5 @@ def train():
 
                 if epsilon > FINAL_EPSILON:
                     epsilon -= (INITIAL_EPSILON - FINAL_EPSILON) / EXPLORE
-
-        with open(f'stored_models/qss/{trial}_{args.stochasticity}.txt', 'w+') as f:
-            f.write(str(dict(Q)))
 
 train()

@@ -4,6 +4,10 @@ import random
 import cv2 
 
 import pickle 
+import os 
+
+if not os.path.exists("results"):
+    os.makedirs("results")
 
 
 num_actions = 4
@@ -20,44 +24,20 @@ MAX_STEPS = 500
 DISPLAY = False 
 actions = range(num_actions)
 
-empty_set = set() 
-
 UP = 3
 DOWN = 2
 LEFT = 1
 RIGHT = 0
 
+def update(state, action, reward, next_state, terminal):
+    next_q_values = []
 
-def update_I(state, action, next_state):
-    ID[str(state), str(next_state)].add(action)
+    for next_action in range(num_actions):
+        next_q_values.append(Q[(next_state, next_action)])
 
-def I(state, next_state):
-    actions = ID[str(state), str(next_state)]
-    if actions == empty_set:
-        return np.random.randint(num_actions)
-    else:
-        return random.choice([action for action in actions])
-
-
-def N(state):
-    row = state[0]
-    col = state[1] 
-
-    neighbors = []
-    new_row = max(0, row - 1) 
-    neighbors.append([new_row, col])
-
-    new_row = min(SIZE, row + 1)
-    neighbors.append([new_row, col])
-
-    new_col =  max(0, col - 1)
-    neighbors.append([row, new_col])
-
-    new_col = min(SIZE, col + 1)
-    neighbors.append([row, new_col])
-
-    return neighbors 
-
+    target = reward + GAMMA * max(next_q_values) * (1 - terminal)
+    Q[(state, action)] = Q[(state, action)] + ALPHA * (target - Q[(state, action)])
+   
 
 def step(state, action, steps):
     row = state[0]
@@ -95,11 +75,7 @@ def step(state, action, steps):
 
 
 def policy(state):
-    neighbors = N(state)
-    best_state_index = np.argmax([Q[str(state), str(neighbor)] for neighbor in neighbors])
-    best_state = neighbors[best_state_index]
-
-    return I(state, best_state)
+    return np.argmax([Q[(str(state), action)] for action in actions])
 
 def eval_policy():
     state = [0, 0] 
@@ -128,29 +104,15 @@ def eval_policy():
 
     return total_reward
 
-
-def update(state, action, reward, next_state, terminal):
-    next_q_values = [Q[str(next_state), str(neighbor)] for neighbor in N(next_state)]
-
-    target = reward + GAMMA * max(next_q_values) * (1 - terminal)
-    s = str(state)
-    next_s = str(next_state)
-
-    Q[(s, next_s)] = Q[(s, next_s)] + ALPHA * (target - Q[(s, next_s)])
-    update_I(state, action, next_state)
-
 def train():
-    for trial in range(20,50):
+    for trial in range(33,50):
         np.random.seed(trial)
         random.seed(trial)
 
         global Q
-        global ID 
 
-        ID = defaultdict(lambda: set()) 
-        vanilla_file = open("results/model_original_shuffled_" + str(num_actions) + "_"  + str(trial) + ".txt", "w") 
+        vanilla_file = open("results/vanilla_original_shuffled_" + str(num_actions) + "_"  + str(trial) + ".txt", "w") 
         Q = defaultdict(lambda: .001)
-
 
         epsilon = INITIAL_EPSILON
 
@@ -171,7 +133,7 @@ def train():
                     action = policy(state) 
 
                 next_state, reward, terminal, max_steps = step(state, action, steps) 
-                update(state, action, reward, next_state, terminal) 
+                update(str(state), action, reward, str(next_state), terminal) 
 
                 state = next_state
                 steps += 1
@@ -179,5 +141,6 @@ def train():
 
                 if epsilon > FINAL_EPSILON:
                     epsilon -= (INITIAL_EPSILON - FINAL_EPSILON) / EXPLORE
+
 
 train()

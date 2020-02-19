@@ -5,6 +5,13 @@ import cv2
 
 import argparse
 import pickle 
+import os 
+
+if not os.path.exists("results"):
+    os.makedirs("results")
+
+if not os.path.exists("stored_models"):
+    os.makedirs("stored_models")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--shuffled", action="store_true")       

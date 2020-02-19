@@ -2,6 +2,10 @@ from collections import defaultdict
 import numpy as np 
 import random 
 import cv2 
+import os 
+
+if not os.path.exists("results"):
+    os.makedirs("results")
 
 num_actions = 4
 SIZE = 10
