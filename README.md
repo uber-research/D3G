@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>Estimating Q(s,s') with Deep Deterministic Dynamics Gradients</h2>
+  <font size=24>Estimating Q(s,s') with Deep Deterministic Dynamics Gradients</font>
 </div>
 
 <p align=center>
