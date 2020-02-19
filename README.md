@@ -1,4 +1,4 @@
-# Estimating Q(s,s') with Deep Deterministic Dynamics Gradients
+## Estimating Q(s,s') with Deep Deterministic Dynamics Gradients
 
 <p align=center>
 <img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="250">
@@ -12,7 +12,7 @@
 
 Official PyTorch implementation of Deep Deterministic Dynamics Gradients. Code is based heavily on the Twin Delayed DDPG [implementation](https://github.com/sfujim/TD3). For research purpose only. Support and/or new releases may be limited.
 
-## Running toy QSS problems
+### Running toy QSS problems
 The stochastic action results can be reproduced by running:
 ```
 cd toy_problems/stochastic_actions && python model_gridworld.py --stochasticity {rand}
@@ -33,7 +33,7 @@ The shuffled action results can be reproduced by running:
 cd toy_problems/shuffled_actions && python model_gridworld.py && python model_gridworld.py --shuffled
 ```
 
-## Running D3G
+### Running D3G
 The paper results can be reproduced by running:
 ```
 cd D3G && ./mujoco_experiments/run_D3G_experiments.sh
@@ -44,7 +44,7 @@ The model predictions for Reacher-v2 and InvertedPendulum-v2 can be visualized. 
 cd D3G && python main.py --policy D3G --env Reacher-v2 --visualize
 ```
 
-## Running Learning from Observation
+### Running Learning from Observation
 The paper results can be reproduced by running:
 ```
 cd D3G && ./lfo_experiments/run_D3G_experiments
