@@ -2,8 +2,11 @@
 
 <p align=center>
 <img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="200">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="200">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="200">
-</p>
 Figure: Model predictions learned by D3G
+</p>
+
+</br>
+</br>
 
 Official PyTorch implementation of Deep Deterministic Dynamics Gradients. For research purpose only. Support and/or new releases may be limited.
 
