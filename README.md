@@ -17,7 +17,6 @@ The stochastic action results can be reproduced by running:
 ```
 cd toy_problems/stochastic_actions && python model_gridworld.py --stochasticity {rand}
 ```
-Where rand is either 0, .25, .5, or .75.
 
 The windy cliffworld results can be reproduced by running:
 ```
