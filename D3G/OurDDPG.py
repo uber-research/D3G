@@ -1,3 +1,5 @@
+""" Modifications Copyright (c) 2019 Uber Technologies, Inc. """
+
 import copy
 import numpy as np
 import torch
@@ -44,7 +46,7 @@ class Critic(nn.Module):
 
 
 class DDPG(object):
-	def __init__(self, state_dim, action_dim, max_action, discount=0.99, tau=0.005):
+	def __init__(self, state_dim, action_dim, max_action, discount=0.99, tau=0.005, is_discrete=False):
 		self.actor = Actor(state_dim, action_dim, max_action).to(device)
 		self.actor_target = copy.deepcopy(self.actor)
 		self.actor_optimizer = torch.optim.Adam(self.actor.parameters())
