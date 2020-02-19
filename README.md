@@ -19,6 +19,11 @@ cd toy_problems/stochastic_actions && python model_gridworld.py --stochasticity 
 ```
 Where rand is either 0, .25, .5, or .75.
 
+The windy cliffworld results can be reproduced by running:
+```
+cd toy_problems/windy_cliffworld && python model_gridworld.py 
+```
+
 The redundant action results can be reproduced by running:
 ```
 cd toy_problems/redundant_actions && python model_gridworld.py
