@@ -7,7 +7,7 @@ Our code is based heavily on the Twin Delayed DDPG [implementation](https://gith
 ### Running toy QSS problems
 The stochastic action results can be reproduced by running:
 ```
-cd toy_problems/stochastic_actions && python model_gridworld.py --randomness rand
+cd toy_problems/stochastic_actions && python model_gridworld.py --stochasticity {rand}
 ```
 Where rand is either 0, .25, .5, or .75.
 
