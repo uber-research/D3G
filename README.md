@@ -5,7 +5,7 @@
 </p>
 
 <div align="center">
-  Figure 1: Model predictions learned by D3G.
+  Figure 1: Model predictions learned by D3G in a Gridworld, InvertedPendulum-v2, and Reacher-v2.
 </div>
 </br>
 </br>
