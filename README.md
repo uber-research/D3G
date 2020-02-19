@@ -1,12 +1,11 @@
 # Estimating Q(s,s') with Deep Deterministic Dynamics Gradients
 
-
-<img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="60">
-
-<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="60">
-
-<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="60">
-
+<center>
+<img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="200">
+<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="200">
+<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="200">
+<\center>
+  
 Official PyTorch implementation of Deep Deterministic Dynamics Gradients. For research purpose only. Support and/or new releases may be limited.
 
 Our code is based heavily on the Twin Delayed DDPG [implementation](https://github.com/sfujim/TD3).
