@@ -23,11 +23,11 @@ cd toy_problems/shuffled_actions && python model_gridworld.py
 ### Running D3G
 The paper results can be reproduced by running:
 ```
-cd TD3 && ./mujoco_experiments/run_D3G_experiments.sh
+cd D3G && ./mujoco_experiments/run_D3G_experiments.sh
 ```
 
 ### Running Learning from Observation
 The paper results can be reproduced by running:
 ```
-cd TD3 && ./lfo_experiments/run_D3G_experiments
+cd D3G && ./lfo_experiments/run_D3G_experiments
 ```
