@@ -15,12 +15,11 @@ Official PyTorch implementation of Deep Deterministic Dynamics Gradients. Code i
 ### Setup
 Clone the repo: 
 ```
-git clone https://github.com/uber-research/D3G.git 
+git clone https://github.com/uber-research/D3G.git && cd D3G
 ```
 
 We use Python 3.6.2. Requirements for D3G can be installed by running:
 ```
-cd D3G
 pip install -r D3G/requirements.txt
 ```
 
