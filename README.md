@@ -1,11 +1,11 @@
 # Estimating Q(s,s') with Deep Deterministic Dynamics Gradients
 
 <p align=center>
-<img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="250">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="250">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="250">
+<img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="260">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="250">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="250">
 </p>
 
 <div align="center">
-  Figure: Model predictions learned by D3G.
+  Figure 1: Model predictions learned by D3G.
 </div>
 </br>
 </br>
