@@ -4,11 +4,9 @@ import matplotlib
 import matplotlib.pyplot as plt
 plt.ion() 
 
-#envs = ['BipedalWalkerModified-v0']
 envs = ['Reacher-v2','Reacher-v2', 'HalfCheetah-v2', 'Hopper-v2', 'Walker2d-v2', 'InvertedPendulum-v2', 'InvertedDoublePendulum-v2', 'Ant-v2', 'Humanoid-v2']
 
-#policies = ['TD3', 'Model_TD3', 'D3G', 'GoalD3G']
-policies = ['TD3', 'OurDDPG', 'D3G',  'Standard_QSS']#, 'Action_D3G']
+policies = ['TD3', 'OurDDPG', 'D3G',  'Standard_QSS']
 
 colors = [[1,0,1], [0,0,1], [0,1,0], 'y']
 
@@ -18,8 +16,6 @@ for env in envs:
   c = 0 
   plt.clf() 
   plt.figure(figsize=(10,9)) 
- # plt.title(env, fontsize=50)
-  #sns.set(rc={'figure.figsize':(700,690)})
   sns.set(style="ticks", rc={"lines.linewidth": 2})
   matplotlib.rc('xtick', labelsize=20)
   matplotlib.rc('ytick', labelsize=20)
@@ -35,7 +31,7 @@ for env in envs:
       else:
         plot_name = policy
 
-      results = [np.load("mujoco_results/" + base_file_name + "_" + str(seed) + ".npy") for seed in seeds]
+      results = [np.load("results/" + base_file_name + "_" + str(seed) + ".npy") for seed in seeds]
       
       sns.set_style("whitegrid")
       sns.tsplot(
