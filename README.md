@@ -27,8 +27,18 @@ The paper results can be reproduced by running:
 cd D3G && ./mujoco_experiments/run_D3G_experiments.sh
 ```
 
+The model predictions for Reacher-v2 and InvertedPendulum-v2 can be visualized. To see this, run:
+```
+cd D3G && python main.py --policy D3G --env Reacher-v2 --visualize
+```
+
 ### Running Learning from Observation
 The paper results can be reproduced by running:
 ```
 cd D3G && ./lfo_experiments/run_D3G_experiments
+```
+
+The model predictions for Reacher-v2 and InvertedPendulum-v2 can be visualized here too. To see this, run:
+```
+cd D3G && python learn_from_observation.py --policy D3G --env Reacher-v2 --visualize
 ```
