@@ -1,6 +1,4 @@
-<div align="center">
-  <h1>Estimating Q(s,s') with Deep Deterministic Dynamics Gradients</h1>
-</div>
+# Estimating Q(s,s') with Deep Deterministic Dynamics Gradients
 
 <p align=center>
 <img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="200">
