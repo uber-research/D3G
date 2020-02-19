@@ -12,6 +12,12 @@
 
 Official PyTorch implementation of Deep Deterministic Dynamics Gradients. Code is based heavily on the Twin Delayed DDPG [implementation](https://github.com/sfujim/TD3). For research purpose only. Support and/or new releases may be limited.
 
+### Setup
+We use Python 3.6.2. Requirements for D3G can be installed by running:
+```
+pip install -r D3G/requirements.txt
+```
+
 ### Running toy QSS problems
 The stochastic action results can be reproduced by running:
 ```
