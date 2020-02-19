@@ -4,8 +4,9 @@
 <img src="https://github.com/uber-research/D3G/blob/master/resources/trajectory.gif" width="200">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_pendulum.gif" width="200">&nbsp;&nbsp;&nbsp;<img src="https://github.com/uber-research/D3G/blob/master/resources/learned_reacher.gif" width="200">
 </p>
 
-<p style="text-align: center;">Figure: Model predictions learned by D3G</p>
-
+<div align="center">
+  Figure: Model predictions learned by D3G.
+</div>
 </br>
 </br>
 
