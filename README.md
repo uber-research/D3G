@@ -18,7 +18,7 @@ cd toy_problems/redundant_actions && python model_gridworld.py
 
 The shuffled action results can be reproduced by running:
 ```
-cd toy_problems/shuffled_actions && python model_gridworld.py
+cd toy_problems/shuffled_actions && python model_gridworld.py && python model_gridworld.py --shuffled
 ```
 
 ### Running D3G
