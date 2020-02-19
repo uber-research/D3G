@@ -217,7 +217,7 @@ if __name__ == "__main__":
                         print(f"QSS training: {t}")
 
                         if args.visualize:
-                            eval_model(policy, args.env, args.seed)
+                            eval_model(d3g_policy, args.env, args.seed)
       
         if args.expert:
           bco_policy = bco.BCO(state_dim=state_dim, action_dim=action_dim, max_action=max_action, batch_size=args.batch_size)

@@ -103,7 +103,14 @@ class GoalReplayBuffer(object):
       return (
           self.state[ind],
           self.action[ind],
+          self.next_state[ind],
+          self.goal[ind],
+          self.reward[ind],
+          self.t[ind],
+          self.not_done[ind]
+        )
 
+ 
 class ObservationalBuffer(object):
   def __init__(self, state_dim, action_dim, max_size=int(1e6)):
     self.max_size = max_size

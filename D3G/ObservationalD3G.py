@@ -199,11 +199,6 @@ class D3G(object):
                     critic_loss.backward()
                     self.critic_optimizer.step()
 
-                # Optimize the actor
-                self.reward_optimizer.zero_grad()
-                reward_loss.backward()
-                self.reward_optimizer.step()
-
                 # Compute forward model loss
                 #predicted_next_state = self.forward_model(state, reward)
                 target_Q1 = self.critic_target.Q1(state, next_state)
@@ -238,9 +233,6 @@ class D3G(object):
                     for param, target_param in zip(self.model.parameters(), self.model_target.parameters()):
                             target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
 
-                    for param, target_param in zip(self.D.parameters(), self.D_target.parameters()):
-                            target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
-                  
                     self.writer.add_scalar("model_loss", model_loss, self.total_it)
                     self.writer.add_scalar("forward_model_loss", forward_model_loss, self.total_it)
                     self.writer.add_scalar("critic_loss", critic_loss, self.total_it)

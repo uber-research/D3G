@@ -148,6 +148,13 @@ class D3G(object):
 
                 return action
 
+        def select_goal(self, state):
+                state = torch.FloatTensor(state.reshape(1, -1)).to(device)
+                next_state = state + self.model(state).detach()
+                inverse_a = self.actor(state, next_state)
+                next_state = state + self.forward_model(state, inverse_a)
+
+                return next_state.cpu().data.numpy().flatten()
 
         def train(self, replay_buffer, batch_size=100, dynamics_only=False):
                 # Sample replay buffer 
