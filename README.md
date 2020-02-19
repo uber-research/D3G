@@ -1,6 +1,6 @@
 # Estimating Q(s,s') with Deep Deterministic Dynamics Gradients
 
-PyTorch implementation of Deep Deterministic Dynamics Gradients.
+PyTorch implementation of Deep Deterministic Dynamics Gradients. For research purpose only. Support and/or new releases may be limited.
 
 Our code is based heavily on the Twin Delayed DDPG [implementation](https://github.com/sfujim/TD3).
 
@@ -31,5 +31,3 @@ The paper results can be reproduced by running:
 ```
 cd TD3 && ./lfo_experiments/run_D3G_experiments
 ```
-
-For research purpose only. Support and/or new releases may be limited.
