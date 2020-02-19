@@ -52,7 +52,7 @@ for env in envs:
   plt.rc('legend', fontsize=100)    # legend fontsize
   plt.ylabel("Average Episodic Reward",fontsize=30)
   plt.xlabel("Timesteps x 5000",fontsize=30)
-  plt.savefig("mujoco_plots/" + env + ".png")
+  plt.savefig(env + ".png")
 
   print(f"{env}\n")
   input("Press enter to see next plot.")
