@@ -3,7 +3,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.utils.tensorboard import SummaryWriter
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 loss_fn = torch.nn.BCELoss()
@@ -134,8 +133,6 @@ class D3G(object):
                 self.batch_size = batch_size
 
                 self.total_it = 0
-                self.writer = SummaryWriter(f"loss_summaries/{summary_name}")
-
 
         def select_action(self, state):
                 state = torch.FloatTensor(state.reshape(1, -1)).to(device)
@@ -233,8 +230,3 @@ class D3G(object):
                     for param, target_param in zip(self.model.parameters(), self.model_target.parameters()):
                             target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
 
-                    self.writer.add_scalar("model_loss", model_loss, self.total_it)
-                    self.writer.add_scalar("forward_model_loss", forward_model_loss, self.total_it)
-                    self.writer.add_scalar("critic_loss", critic_loss, self.total_it)
-                    self.writer.add_scalar("cycle_loss", cycle_loss, self.total_it)
-                      

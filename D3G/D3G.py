@@ -3,7 +3,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.utils.tensorboard import SummaryWriter
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -135,8 +134,6 @@ class D3G(object):
                 self.policy_freq = policy_freq
                 
                 self.total_it = 0
-                self.writer = SummaryWriter("loss_summaries")
-
 
         def select_action(self, state):
                 state = torch.FloatTensor(state.reshape(1, -1)).to(device)
@@ -227,15 +224,6 @@ class D3G(object):
                     for param, target_param in zip(self.model.parameters(), self.model_target.parameters()):
                             target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
 
-                  
-                    self.writer.add_scalar("Loss/model_loss", model_loss, self.total_it)
-                    self.writer.add_scalar("Loss/actor_loss", actor_loss, self.total_it)
-                    self.writer.add_scalar("Loss/critic_loss", critic_loss, self.total_it)
-                    self.writer.add_scalar("Loss/model_loss", model_loss, self.total_it)
-                    self.writer.add_scalar("Loss/forward_model_loss", forward_model_loss, self.total_it)
-                    self.writer.add_scalar("Loss/cycle_loss", cycle_loss, self.total_it)
-                    self.writer.add_scalar("Loss/gradient_loss", model_gradient_loss, self.total_it)
-                      
 
         def save(self, filename):
                 torch.save(self.critic.state_dict(), filename + "_critic")
